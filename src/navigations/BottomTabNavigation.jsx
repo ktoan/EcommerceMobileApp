@@ -2,18 +2,15 @@ import { Entypo } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
 import { COLORS, SIZES } from "../../assets/constants";
+import CartIcon from "../components/cart-icon/CartIcon";
 import {
-  Cart,
   CartStack,
-  Customer,
   CustomerStack,
   Home,
   Product,
   SearchProduct,
   Shop,
 } from "../screens";
-import CartIcon from "../components/cart-icon/CartIcon";
-import { SafeAreaProvider } from "react-native-safe-area-context";
 
 const Tabs = createBottomTabNavigator();
 

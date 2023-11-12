@@ -1,8 +1,8 @@
 import React from "react";
 import { Image, TouchableOpacity, View } from "react-native";
-import styles from "./searchitem.style";
-import CustomText from "../text/CustomText";
 import { COLORS, OPACITY, SIZES } from "../../../assets/constants";
+import CustomText from "../text/CustomText";
+import styles from "./searchitem.style";
 
 const SearchItem = ({ onPress = () => {} }) => {
   return (

@@ -1,14 +1,21 @@
 import React from "react";
 import { ScrollView } from "react-native";
-import MenuItem from "./MenuItem";
-import styles from "./menuitems.style";
 import { COLORS } from "../../../assets/constants";
 import Divider from "../divider/Divider";
+import MenuItem from "./MenuItem";
+import styles from "./menuitems.style";
+import { useNavigation } from "@react-navigation/native";
 
 const MenuItems = () => {
+  const navigation = useNavigation();
+
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
-      <MenuItem iconName="pencil" text="Information" />
+      <MenuItem
+        onPress={() => navigation.navigate("Information")}
+        iconName="pencil"
+        text="Information"
+      />
       <MenuItem iconName="shopping-bag" text="Orders" />
       <MenuItem iconName="heart-outlined" text="Favourite" />
       <MenuItem iconName="shop" text="Following Store" />

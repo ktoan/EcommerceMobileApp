@@ -1,19 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-  previousPage: "",
-};
+const initialState = {};
 
 const appSlice = createSlice({
   name: "app",
   initialState,
-  reducers: {
-    setPreviousPage: (state, payload) => {
-      state.previousPage = payload.page;
-    },
-  },
+  reducers: {},
 });
 
-export const { setPreviousPage } = appSlice.actions;
+export const {} = appSlice.actions;
 
 export default appSlice.reducer;

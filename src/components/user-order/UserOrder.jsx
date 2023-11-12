@@ -1,7 +1,7 @@
 import React from "react";
-import { Text, View } from "react-native";
-import CustomText from "../text/CustomText";
+import { View } from "react-native";
 import { COLORS, SIZES } from "../../../assets/constants";
+import CustomText from "../text/CustomText";
 import styles from "./userorder.style";
 
 const UserOrder = () => {

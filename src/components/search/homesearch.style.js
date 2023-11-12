@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
   },
   searchInput: {
     height: "100%",
+    fontFamily: "regular",
     textAlignVertical: "center",
     fontSize: SIZES.medium,
     textAlignVertical: "center",

@@ -1,22 +1,18 @@
-import {
-  NavigationContainer,
-  useNavigationState,
-  useRoute,
-} from "@react-navigation/native";
+import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
-import { useCallback, useEffect, useState } from "react";
-import BottomTabNavigation from "./src/navigations/BottomTabNavigation";
-import { Cart, Login, ProductDetails, Register, Splash } from "./src/screens";
+import { useCallback, useState } from "react";
 import { Provider } from "react-redux";
-import Store from "./src/redux/store";
 import { PersistGate } from "redux-persist/integration/react";
+import BottomTabNavigation from "./src/navigations/BottomTabNavigation";
+import Store from "./src/redux/store";
+import { Login, ProductDetails, Register, Splash } from "./src/screens";
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
-  const [isUserLogin, setUserLogin] = useState(false);
+  const [isUserLogin, setUserLogin] = useState(true);
   const [fontsLoaded] = useFonts({
     regular: require("./assets/fonts/Poppins-Regular.ttf"),
     light: require("./assets/fonts/Poppins-Light.ttf"),

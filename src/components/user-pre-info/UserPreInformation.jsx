@@ -1,8 +1,8 @@
 import React from "react";
-import { Image, Text, View } from "react-native";
-import styles from "./userpreinfo.style";
-import CustomText from "../text/CustomText";
+import { Image, View } from "react-native";
 import { COLORS, SIZES } from "../../../assets/constants";
+import CustomText from "../text/CustomText";
+import styles from "./userpreinfo.style";
 
 const UserPreInformation = () => {
   return (

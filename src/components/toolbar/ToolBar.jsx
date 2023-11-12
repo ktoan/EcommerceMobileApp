@@ -1,9 +1,9 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Text, TouchableOpacity, View } from "react-native";
-import styles from "./toolbar.style";
-import { useNavigation } from "@react-navigation/native";
 import { OPACITY } from "../../../assets/constants";
 import CartIcon from "../cart-icon/CartIcon";
+import styles from "./toolbar.style";
 
 const ToolBar = () => {
   const navigation = useNavigation();

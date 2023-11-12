@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { COLORS, SHADOWS, SIZES } from "../../../assets/constants";
 import { TextInput } from "react-native";
+import { COLORS, SHADOWS } from "../../../assets/constants";
+import styles from "./custominput.style";
 
 const CustomInput = ({ styling = {}, ...props }) => {
   const [focused, setFocused] = useState(false);
@@ -11,15 +12,7 @@ const CustomInput = ({ styling = {}, ...props }) => {
       placeholderTextColor={COLORS.gray}
       underlineColorAndroid="transparent"
       style={[
-        {
-          fontFamily: "regular",
-          fontSize: SIZES.medium,
-          padding: SIZES.small,
-          backgroundColor: COLORS.light,
-          borderRadius: SIZES.small,
-          marginBottom: SIZES.medium,
-          marginHorizontal: SIZES.small,
-        },
+        styles.default,
         focused && {
           borderWidth: 1,
           borderColor: COLORS.primary,

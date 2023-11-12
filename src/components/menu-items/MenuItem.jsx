@@ -1,9 +1,9 @@
-import { View, Text, TouchableOpacity } from "react-native";
-import React from "react";
-import styles from "./menuitem.style";
 import { Entypo } from "@expo/vector-icons";
+import React from "react";
+import { TouchableOpacity, View } from "react-native";
 import { COLORS, OPACITY, SIZES } from "../../../assets/constants";
 import CustomText from "../text/CustomText";
+import styles from "./menuitem.style";
 
 const MenuItem = ({
   text = "Text",

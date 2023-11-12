@@ -1,7 +1,7 @@
-import React from "react";
-import { Text, TextInput, View } from "react-native";
-import styles from "./commonsearch.style";
 import { Entypo } from "@expo/vector-icons";
+import React from "react";
+import { TextInput, View } from "react-native";
+import styles from "./commonsearch.style";
 
 const CommonSearch = ({ placeholder = "Search..." }) => {
   return (

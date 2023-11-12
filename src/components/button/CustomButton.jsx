@@ -1,8 +1,8 @@
+import { Entypo } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native";
 import { COLORS, OPACITY } from "../../../assets/constants";
 import CustomText from "../text/CustomText";
-import styles from "./custonbutton.style";
-import { Entypo } from "@expo/vector-icons";
+import styles from "./custonButton.style";
 
 const CustomButton = ({
   onPress = () => {},

@@ -46,12 +46,13 @@ const MainCart = () => {
               flexDirection: "row",
               padding: SIZES.small,
               alignItems: "center",
-              justifyContent: "center",
+              justifyContent: "space-between",
             }}
           >
+            <CustomText text="Total: $499" size={SIZES.xLarge} bold />
             <CustomButton
               onPress={() => navigationCheckOutScreen()}
-              text="Check out checked products"
+              text="Check out"
             />
           </View>
         </>

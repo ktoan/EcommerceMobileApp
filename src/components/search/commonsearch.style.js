@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
   searchIcon: { marginHorizontal: SIZES.small, color: COLORS.gray },
   searchInput: {
     flex: 1,
+    fontFamily: "regular",
     height: "100%",
     textAlignVertical: "center",
     fontSize: SIZES.medium,

@@ -1,12 +1,14 @@
-import React, { useState } from "react";
-import { Image, Text, TouchableOpacity, View } from "react-native";
-import { COLORS, OPACITY, SHADOWS, SIZES } from "../../../assets/constants";
-import CustomText from "../text/CustomText";
 import { Entypo } from "@expo/vector-icons";
+import React, { useState } from "react";
+import { Image, TouchableOpacity, View } from "react-native";
+import { COLORS, OPACITY, SIZES } from "../../../assets/constants";
+import CustomText from "../text/CustomText";
 import styles from "./cartitem.style";
+import CheckBox from "react-native-check-box";
 
 const CartItem = () => {
   const [quantity, setQuantity] = useState(1);
+  const [isChecked, setChecked] = useState(false);
 
   function onChangeQuantity(action) {
     if (action === "minus") {
@@ -20,6 +22,10 @@ const CartItem = () => {
     } else {
       return;
     }
+  }
+
+  function onChangeSelectedOption() {
+    setChecked(!isChecked);
   }
 
   return (
@@ -67,6 +73,12 @@ const CartItem = () => {
         </View>
         <CustomText text="Total: $499" top={SIZES.small} />
       </View>
+      <CheckBox
+        isChecked={isChecked}
+        checkBoxColor={COLORS.primary}
+        checkedCheckBoxColor={COLORS.primary}
+        onClick={() => onChangeSelectedOption()}
+      />
     </View>
   );
 };
