@@ -1,28 +1,36 @@
+import { Entypo } from "@expo/vector-icons";
 import React, { useState } from "react";
-import { TextInput } from "react-native";
-import { COLORS, SHADOWS } from "../../../assets/constants";
+import { TextInput, View } from "react-native";
+import { COLORS, SIZES } from "../../../assets/constants";
 import styles from "./custominput.style";
 
-const CustomInput = ({ styling = {}, ...props }) => {
+const CustomInput = ({ iconName, styling = {}, ...props }) => {
   const [focused, setFocused] = useState(false);
   return (
-    <TextInput
-      onFocus={() => setFocused(true)}
-      onBlur={() => setFocused(false)}
-      placeholderTextColor={COLORS.gray}
-      underlineColorAndroid="transparent"
+    <View
       style={[
-        styles.default,
-        focused && {
-          borderWidth: 1,
-          borderColor: COLORS.primary,
-          ...SHADOWS.medium,
-          shadowColor: COLORS.primary,
-        },
+        styles.container,
         styling,
+        focused
+          ? { borderColor: COLORS.primary, borderWidth: 1 }
+          : { borderColor: "transparent", borderWidth: 1 },
       ]}
-      {...props}
-    />
+    >
+      <Entypo
+        name={iconName}
+        size={24}
+        color={COLORS.primary}
+        style={iconName ? { margin: SIZES.small } : { marginLeft: SIZES.small }}
+      />
+      <TextInput
+        onFocus={() => setFocused(true)}
+        onBlur={() => setFocused(false)}
+        placeholderTextColor={COLORS.gray}
+        underlineColorAndroid="transparent"
+        style={[styles.default]}
+        {...props}
+      />
+    </View>
   );
 };
 

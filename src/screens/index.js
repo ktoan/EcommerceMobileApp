@@ -1,23 +1,23 @@
 import CartStack from "./app/CartStack";
 import CustomerStack from "./app/CustomerStack";
 import Home from "./app/Home";
-import ProductDetails from "./app/ProductDetails";
 import SearchProduct from "./app/SearchProduct";
 import Shop from "./app/Shop";
-import Product from "./app/Product";
+import ProductStack from "./app/ProductStack";
 import Splash from "./Splash";
 import Login from "./auth/Login";
 import Register from "./auth/Register";
+import Information from "./app/customer/Information";
 
 export {
   CartStack,
   CustomerStack,
   Home,
-  ProductDetails,
   SearchProduct,
   Shop,
-  Product,
+  ProductStack,
   Splash,
   Login,
   Register,
+  Information,
 };

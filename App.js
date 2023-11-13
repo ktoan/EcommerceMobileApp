@@ -7,7 +7,7 @@ import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import BottomTabNavigation from "./src/navigations/BottomTabNavigation";
 import Store from "./src/redux/store";
-import { Login, ProductDetails, Register, Splash } from "./src/screens";
+import { Login, Register, Splash } from "./src/screens";
 
 const Stack = createNativeStackNavigator();
 
@@ -43,7 +43,6 @@ const App = () => {
             name="Bottom Navigation"
             component={BottomTabNavigation}
           />
-          <Stack.Screen name="ProductDetails" component={ProductDetails} />
         </>
       ) : (
         <>

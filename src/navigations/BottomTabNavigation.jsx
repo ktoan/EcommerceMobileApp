@@ -7,7 +7,7 @@ import {
   CartStack,
   CustomerStack,
   Home,
-  Product,
+  ProductStack,
   SearchProduct,
   Shop,
 } from "../screens";
@@ -74,7 +74,7 @@ const BottomTabNavigation = () => {
           },
         }}
         name="Product"
-        component={Product}
+        component={ProductStack}
       />
       <Tabs.Screen
         options={{

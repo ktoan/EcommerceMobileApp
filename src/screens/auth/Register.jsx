@@ -24,10 +24,14 @@ const Register = () => {
         size={SIZES.xLarge - 6}
         color={COLORS.primary}
       />
-      <CustomInput styling={{ marginTop: SIZES.medium }} placeholder="Email" />
-      <CustomInput placeholder="Full Name" />
-      <CustomInput placeholder="Password" />
-      <CustomInput placeholder="Confirm Password" />
+      <CustomInput
+        iconName="email"
+        styling={{ marginTop: SIZES.medium }}
+        placeholder="Email"
+      />
+      <CustomInput placeholder="Full Name" iconName="v-card" />
+      <CustomInput placeholder="Password" iconName="lock" />
+      <CustomInput placeholder="Confirm Password" iconName="lock" />
       <CustomButton
         iconName="add-user"
         text="Sign up"

@@ -25,8 +25,12 @@ const Login = () => {
         size={SIZES.xLarge - 6}
         color={COLORS.primary}
       />
-      <CustomInput styling={{ marginTop: SIZES.medium }} placeholder="Email" />
-      <CustomInput placeholder="Password" />
+      <CustomInput
+        iconName={"email"}
+        styling={{ marginTop: SIZES.medium }}
+        placeholder="Email"
+      />
+      <CustomInput placeholder="Password" iconName={"lock"} />
       <CustomButton
         iconName="login"
         text="Sign in"

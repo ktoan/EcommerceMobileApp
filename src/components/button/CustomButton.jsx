@@ -2,7 +2,7 @@ import { Entypo } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native";
 import { COLORS, OPACITY } from "../../../assets/constants";
 import CustomText from "../text/CustomText";
-import styles from "./custonButton.style";
+import styles from "./custombutton.style";
 
 const CustomButton = ({
   onPress = () => {},
@@ -13,10 +13,12 @@ const CustomButton = ({
   buttonStyling = {},
   textStyling = {},
   bold = false,
+  ...props
 }) => {
   return (
     <TouchableOpacity
       onPress={onPress}
+      {...props}
       activeOpacity={OPACITY}
       style={[styles.buttonContainer(bgColor), buttonStyling]}
     >

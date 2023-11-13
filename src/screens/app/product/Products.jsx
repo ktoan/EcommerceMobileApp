@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { COLORS, SIZES } from "../../../assets/constants";
+import { COLORS, SIZES } from "../../../../assets/constants";
 import {
   Categories,
   CommonSearch,
   CustomText,
   ProductGrid,
-} from "../../components";
+} from "../../../components";
 
-const Product = () => {
+const Products = () => {
   const [products, setProducts] = useState([1, 2, 3, 4, 5, 6, 7, 8]);
 
   return (
@@ -38,7 +38,7 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default Products;
 
 const styles = StyleSheet.create({
   mbMedium: {

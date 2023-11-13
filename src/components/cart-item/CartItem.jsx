@@ -4,7 +4,7 @@ import { Image, TouchableOpacity, View } from "react-native";
 import { COLORS, OPACITY, SIZES } from "../../../assets/constants";
 import CustomText from "../text/CustomText";
 import styles from "./cartitem.style";
-import CheckBox from "react-native-check-box";
+// import CheckBox from "react-native-check-box";
 
 const CartItem = () => {
   const [quantity, setQuantity] = useState(1);
@@ -73,12 +73,12 @@ const CartItem = () => {
         </View>
         <CustomText text="Total: $499" top={SIZES.small} />
       </View>
-      <CheckBox
+      {/* <CheckBox
         isChecked={isChecked}
         checkBoxColor={COLORS.primary}
         checkedCheckBoxColor={COLORS.primary}
         onClick={() => onChangeSelectedOption()}
-      />
+      /> */}
     </View>
   );
 };
