@@ -1,11 +1,11 @@
 import React, { useState } from "react";
+import { FlatList, Image, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { CommonSearch, SearchItem } from "../../components";
-import { FlatList, Image, StyleSheet, Text, View } from "react-native";
 import { SIZES } from "../../../assets/constants";
+import { CommonSearch, SearchItem } from "../../components";
 
 const SearchProduct = () => {
-  const [searchResult, setSearchResult] = useState([]);
+  const [searchResult, setSearchResult] = useState([1, 2, 3]);
 
   return (
     <SafeAreaView>

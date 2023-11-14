@@ -15,7 +15,7 @@ import LocationItem from "../../../components/location-item/LocationItem";
 const Information = () => {
   const navigation = useNavigation();
   const [locations, setLocations] = useState([1, 2]);
-  const [isEditProfile, setEditProfile] = useState(false);
+  const [isEditProfile, setEditProfile] = useState(true);
 
   return (
     <SafeAreaView style={{ flex: 1, marginBottom: SIZES.bottomBarHeight }}>

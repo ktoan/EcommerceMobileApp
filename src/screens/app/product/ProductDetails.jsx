@@ -1,14 +1,41 @@
 import React, { useState } from "react";
-import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
+import {
+  Image,
+  ScrollView,
+  StyleSheet,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { COLORS, OPACITY, SIZES } from "../../../../assets/constants";
+import { COLORS, OPACITY, SIZES, SHADOWS } from "../../../../assets/constants";
 import { Entypo } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-import { CustomText } from "../../../components";
+import {
+  ColorPicker,
+  CustomButton,
+  CustomText,
+  OptionPicker,
+} from "../../../components";
 
 const ProductDetails = () => {
   const navigation = useNavigation();
   const [isLiked, setLiked] = useState(false);
+  const [quantity, setQuantity] = useState(1);
+  const [sizes, setSizes] = useState(["XL", "L", "M"]);
+
+  function onChangeQuantity(action) {
+    if (action === "minus") {
+      if (quantity === 1) {
+        return;
+      } else {
+        setQuantity((quantity) => quantity - 1);
+      }
+    } else if (action === "plus") {
+      setQuantity((quantity) => quantity + 1);
+    } else {
+      return;
+    }
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -46,13 +73,49 @@ const ProductDetails = () => {
         text="Lorem ipsum dolor sit amet consect adipisicing elit"
         color={COLORS.primary}
       />
-      <CustomText
-        size={SIZES.large - 2}
-        text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex fuga enim ratione eligendi voluptatem recusandae? Illo asperiores dicta consectetur veniam.
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <CustomText
+          size={SIZES.large - 2}
+          text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex fuga enim ratione eligendi voluptatem recusandae? Illo asperiores dicta consectetur veniam.
 "
-        color={COLORS.gray}
-        noLines={3}
-      />
+          color={COLORS.gray}
+          noLines={5}
+        />
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <CustomText bold text="Price: $499" size={SIZES.xLarge} />
+          <CustomText text="Sales: 199" color={COLORS.gray} />
+        </View>
+        <ColorPicker />
+        <OptionPicker options={sizes} title="Size" />
+      </ScrollView>
+      <View style={styles.lowerRow}>
+        <View style={styles.quantityContainer}>
+          <TouchableOpacity
+            onPress={() => onChangeQuantity("minus")}
+            activeOpacity={OPACITY}
+          >
+            <Entypo name="minus" size={24} />
+          </TouchableOpacity>
+          <CustomText marginHorizontal={SIZES.medium} bold text={quantity} />
+          <TouchableOpacity
+            onPress={() => onChangeQuantity("plus")}
+            activeOpacity={OPACITY}
+          >
+            <Entypo name="plus" size={24} />
+          </TouchableOpacity>
+        </View>
+        <CustomButton
+          buttonStyling={{ flex: 2 }}
+          iconName="shopping-cart"
+          text="Add to cart"
+        />
+      </View>
     </SafeAreaView>
   );
 };
@@ -60,7 +123,11 @@ const ProductDetails = () => {
 export default ProductDetails;
 
 const styles = StyleSheet.create({
-  container: { flex: 1, position: "relative" },
+  container: {
+    flex: 1,
+    position: "relative",
+    marginBottom: SIZES.bottomBarHeight,
+  },
   upperRow: {
     width: "100%",
     position: "absolute",
@@ -85,5 +152,23 @@ const styles = StyleSheet.create({
     height: "100%",
     resizeMode: "cover",
     alignSelf: "center",
+  },
+  lowerRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    margin: SIZES.small,
+    gap: SIZES.small,
+  },
+  quantityContainer: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingHorizontal: SIZES.medium,
+    backgroundColor: COLORS.lightWhite,
+    paddingVertical: SIZES.small,
+    ...SHADOWS.medium,
+    shadowColor: COLORS.light,
+    borderRadius: SIZES.medium,
   },
 });

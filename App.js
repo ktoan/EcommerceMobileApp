@@ -11,22 +11,6 @@ import { Login, Register, Splash } from "./src/screens";
 
 const Stack = createNativeStackNavigator();
 
-const AuthenticatedScreens = () => {
-  return (
-    <Stack.Screen name="Bottom Navigation" component={BottomTabNavigation} />
-  );
-};
-
-const UnauthenticatedScreens = () => {
-  return (
-    <>
-      <Stack.Screen name="Splash" component={Splash} />
-      <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="Register" component={Register} />
-    </>
-  );
-};
-
 const App = () => {
   const [isUserLogin, setUserLogin] = useState(true);
   const [fontsLoaded] = useFonts({
@@ -53,7 +37,18 @@ const App = () => {
       screenOptions={{ headerShown: false }}
       initialRouteName="Bottom Navigation"
     >
-      {!isUserLogin ? <UnauthenticatedScreens /> : <AuthenticatedScreens />}
+      {!isUserLogin ? (
+        <>
+          <Stack.Screen name="Splash" component={Splash} />
+          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Register" component={Register} />
+        </>
+      ) : (
+        <Stack.Screen
+          name="Bottom Navigation"
+          component={BottomTabNavigation}
+        />
+      )}
     </Stack.Navigator>
   );
 };

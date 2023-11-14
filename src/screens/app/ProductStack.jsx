@@ -8,11 +8,11 @@ const Stack = createNativeStackNavigator();
 const ProductStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName="ProductDetails"
+      initialRouteName="Products"
       screenOptions={{ headerShown: false }}
     >
+      <Stack.Screen name="Products" component={Products} />
       <Stack.Screen name="ProductDetails" component={ProductDetails} />
-      {/* <Stack.Screen name="Products" component={Products} /> */}
     </Stack.Navigator>
   );
 };
