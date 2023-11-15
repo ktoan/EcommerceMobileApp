@@ -8,29 +8,12 @@ import { PersistGate } from "redux-persist/integration/react";
 import BottomTabNavigation from "./src/navigations/BottomTabNavigation";
 import Store from "./src/redux/store";
 import { Login, Register, Splash } from "./src/screens";
+import { BottomPopup } from "./src/components";
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
   const [isUserLogin, setUserLogin] = useState(true);
-  const [fontsLoaded] = useFonts({
-    regular: require("./assets/fonts/Poppins-Regular.ttf"),
-    light: require("./assets/fonts/Poppins-Light.ttf"),
-    bold: require("./assets/fonts/Poppins-Bold.ttf"),
-    medium: require("./assets/fonts/Poppins-Medium.ttf"),
-    extrabold: require("./assets/fonts/Poppins-ExtraBold.ttf"),
-    semibold: require("./assets/fonts/Poppins-SemiBold.ttf"),
-  });
-
-  useCallback(async () => {
-    if (fontsLoaded) {
-      await SplashScreen.hideAsync();
-    }
-  }, [fontsLoaded]);
-
-  if (!fontsLoaded) {
-    return null;
-  }
 
   return (
     <Stack.Navigator
@@ -54,11 +37,31 @@ const App = () => {
 };
 
 export default function RenderedApp() {
+  const [fontsLoaded] = useFonts({
+    regular: require("./assets/fonts/Poppins-Regular.ttf"),
+    light: require("./assets/fonts/Poppins-Light.ttf"),
+    bold: require("./assets/fonts/Poppins-Bold.ttf"),
+    medium: require("./assets/fonts/Poppins-Medium.ttf"),
+    extrabold: require("./assets/fonts/Poppins-ExtraBold.ttf"),
+    semibold: require("./assets/fonts/Poppins-SemiBold.ttf"),
+  });
+
+  useCallback(async () => {
+    if (fontsLoaded) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
     <Provider store={Store.store}>
       <PersistGate loading={null} persistor={Store.persistor}>
         <NavigationContainer>
           <App />
+          <BottomPopup />
         </NavigationContainer>
       </PersistGate>
     </Provider>

@@ -1,3 +1,5 @@
+import { Entypo } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
 import {
   Image,
@@ -7,15 +9,15 @@ import {
   View,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { COLORS, OPACITY, SIZES, SHADOWS } from "../../../../assets/constants";
-import { Entypo } from "@expo/vector-icons";
-import { useNavigation } from "@react-navigation/native";
+import { COLORS, OPACITY, SHADOWS, SIZES } from "../../../../assets/constants";
 import {
   ColorPicker,
   CustomButton,
   CustomText,
   OptionPicker,
+  ReviewProduct,
 } from "../../../components";
+import { useDispatch } from "react-redux";
 
 const ProductDetails = () => {
   const navigation = useNavigation();
@@ -65,9 +67,17 @@ const ProductDetails = () => {
           style={styles.image}
         />
       </View>
+      <View style={styles.ratingContainer}>
+        <Entypo name="star" size={24} color={COLORS.yellow} />
+        <CustomText
+          marginHorizontal={SIZES.small / 2}
+          text="4.8"
+          size={SIZES.medium + 2}
+          bold
+        />
+      </View>
       <CustomText
         bold
-        top={SIZES.small}
         size={SIZES.large}
         noLines={2}
         text="Lorem ipsum dolor sit amet consect adipisicing elit"
@@ -93,6 +103,8 @@ const ProductDetails = () => {
         </View>
         <ColorPicker />
         <OptionPicker options={sizes} title="Size" />
+        <CustomText text="Reviews" size={SIZES.large} bold />
+        <ReviewProduct data={[1, 2, 3, 4, 5]} />
       </ScrollView>
       <View style={styles.lowerRow}>
         <View style={styles.quantityContainer}>
@@ -147,6 +159,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   imageContainer: { width: "100%", height: 300 },
+  ratingContainer: {
+    marginTop: SIZES.small,
+    marginHorizontal: SIZES.small,
+    flexDirection: "row",
+  },
   image: {
     width: "100%",
     height: "100%",

@@ -33,6 +33,9 @@ import OptionPicker from "./option-picker/OptionPicker";
 import Color from "./color-picker/Color";
 import OptionItem from "./option-picker/OptionItem";
 import CheckBox from "./check-box/CheckBox";
+import Review from "./review-product/Review";
+import ReviewProduct from "./review-product/ReviewProduct";
+import BottomPopup from "./modal/BottomPopup";
 
 export {
   // Toolbar
@@ -93,4 +96,9 @@ export {
   OptionItem,
   // Check Box
   CheckBox,
+  // Review
+  ReviewProduct,
+  Review,
+  // Bottom Popup
+  BottomPopup,
 };
