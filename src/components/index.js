@@ -32,6 +32,7 @@ import ColorPicker from "./color-picker/ColorPicker";
 import OptionPicker from "./option-picker/OptionPicker";
 import Color from "./color-picker/Color";
 import OptionItem from "./option-picker/OptionItem";
+import CheckBox from "./check-box/CheckBox";
 
 export {
   // Toolbar
@@ -90,4 +91,6 @@ export {
   // Size Picker
   OptionPicker,
   OptionItem,
+  // Check Box
+  CheckBox,
 };

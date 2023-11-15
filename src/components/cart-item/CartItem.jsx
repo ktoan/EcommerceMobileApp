@@ -2,9 +2,9 @@ import { Entypo } from "@expo/vector-icons";
 import React, { useState } from "react";
 import { Image, TouchableOpacity, View } from "react-native";
 import { COLORS, OPACITY, SIZES } from "../../../assets/constants";
+import CheckBox from "../check-box/CheckBox";
 import CustomText from "../text/CustomText";
 import styles from "./cartitem.style";
-// import CheckBox from "react-native-check-box";
 
 const CartItem = () => {
   const [quantity, setQuantity] = useState(1);
@@ -73,12 +73,12 @@ const CartItem = () => {
         </View>
         <CustomText text="Total: $499" top={SIZES.small} />
       </View>
-      {/* <CheckBox
-        isChecked={isChecked}
+      <CheckBox
+        checked={isChecked}
         checkBoxColor={COLORS.primary}
-        checkedCheckBoxColor={COLORS.primary}
+        iconColor={isChecked ? COLORS.lightWhite : COLORS.primary}
         onClick={() => onChangeSelectedOption()}
-      /> */}
+      />
     </View>
   );
 };

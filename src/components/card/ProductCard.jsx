@@ -15,20 +15,32 @@ const ProductCard = ({ col = false, onPress = () => {} }) => {
           />
         </View>
         <View>
-          <CustomText bold text="Product name" color={COLORS.primary} />
-          <CustomText text="Supplier" size={SIZES.small} color={COLORS.gray} />
           <CustomText
+            onPress={onPress}
+            bold
+            text="Product name"
+            color={COLORS.primary}
+          />
+          <CustomText
+            onPress={onPress}
+            text="Supplier"
+            size={SIZES.small}
+            color={COLORS.gray}
+          />
+          <CustomText
+            onPress={onPress}
             text="Category"
             size={SIZES.medium - 2}
             color={COLORS.gray}
           />
           <View style={{ flexDirection: "row", alignItems: "center" }}>
             <CustomText
+              onPress={onPress}
               text="$399"
               color={COLORS.red}
               styling={{ textDecorationLine: "line-through" }}
             />
-            <CustomText text="$399" marginHorizontal={0} />
+            <CustomText onPress={onPress} text="$399" marginHorizontal={0} />
           </View>
         </View>
       </View>
