@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { COLORS, SIZES } from "../../../assets/constants";
-import { CommonSearch, CustomDropdown, CustomText } from "../../components";
-import { View } from "react-native";
+import {
+  CommonSearch,
+  CustomDropdown,
+  CustomText,
+  ShopGrid,
+} from "../../components";
+import { ScrollView, StyleSheet, View } from "react-native";
 
 const Shop = () => {
   const data = [
@@ -53,8 +58,19 @@ const Shop = () => {
           styling={{ width: "49%" }}
         />
       </View>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={styles.mbMedium}>
+          <ShopGrid products={[1, 2, 3]} />
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
 
 export default Shop;
+
+const styles = StyleSheet.create({
+  mbMedium: {
+    marginBottom: SIZES.medium,
+  },
+});

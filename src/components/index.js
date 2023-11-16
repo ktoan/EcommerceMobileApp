@@ -36,6 +36,7 @@ import CheckBox from "./check-box/CheckBox";
 import Review from "./review-product/Review";
 import ReviewProduct from "./review-product/ReviewProduct";
 import BottomPopup from "./modal/BottomPopup";
+import ShopGrid from "./grid/ShopGrid";
 
 export {
   // Toolbar
@@ -43,6 +44,7 @@ export {
   // Block Title
   BlockTitle,
   // Carousel
+  RecommendedProducts,
   Categories,
   EmptyCartItem,
   FlashSaleCard,
@@ -80,7 +82,7 @@ export {
   ProductCard,
   // Grid Product
   ProductGrid,
-  RecommendedProducts,
+  ShopGrid,
   // Search Item
   SearchItem,
   ToolBar,
